@@ -14,18 +14,28 @@
 
 void show_hello_world(void);
 
-main()
+int main()
 {
-    int c = 0;
-    while(c<3){
-        show_hello_world();
-        c = c+1;
-    }
-    return 0;
-}
+    int this_number, divisor, not_prime;
+    this_number = 3;
 
-void show_hello_world(void){
-    printf("\n\nWe have %d secs per mins\n%d mins per hour\n%d hours per day\n%d days per week\n", SECS_PER_MINS, MINS_PER_HOUR, HOURS_PER_DAY, DAYS_PER_WEEK);
-    printf("%d weeks per month\n%d months per year\n%d years per decade\nAnd %d decades per century", WEEKS_PER_MONTH, MONTHS_PER_YEAR, YEARS_PER_DECADE, DECADES_PER_CENTURY);
-    printf("\n\nAnd this, ladies and gentlemans,\nis preprocessor's DEFINE in C programming language.\nHope you like it. Blah XD\n\n");
+    while(this_number<100){
+        divisor = this_number / 2;
+        not_prime = 0;
+        while (divisor > 1){
+            if(this_number % divisor == 0){
+                not_prime = 1;
+                divisor = 0;
+            }
+            else{
+                divisor -= 1;
+            }
+        }
+        if(not_prime == 0){
+            printf("%d is a prime number\n", this_number);
+        }
+        this_number+=1;
+    }
+
+    return 0;
 }
