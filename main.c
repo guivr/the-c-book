@@ -14,9 +14,13 @@
 
 void show_hello_world(void);
 
-int main()
+main()
 {
-    show_hello_world();
+    int c = 0;
+    while(c<3){
+        show_hello_world();
+        c = c+1;
+    }
     return 0;
 }
 
